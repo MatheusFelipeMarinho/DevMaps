@@ -6,7 +6,7 @@ module.exports = {
     async index(request, response) {
         const { latitude, longitude, techs} = request.query;
 
-        // const techsArray = ParseStringAsArray(techs);      
+         const techsArray = techs.split(',').map(tech => tech.trim());    
         
 
         return response.json({devs: []})
